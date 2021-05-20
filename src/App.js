@@ -1,24 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    const [numberOne, setNumberOne]= useState("")
+    const [numberTwo, setNumberTwo]= useState("")
+    const [result, setResult]= useState(0)
+
+
+
+    const handlePlus=()=>{
+         return setResult(+numberOne+ +numberTwo)
+}
+    const handleMinus=()=>{
+        return setResult(numberOne-numberTwo)
+    }
+    const handleDivide=()=>{
+        return setResult (numberOne*numberTwo)
+    }
+    const handleMultiply=()=>{
+        return setResult(numberOne/numberTwo)
+    }
+    const handleReset=()=>{
+        return setNumberOne("") & setNumberTwo("")
+    }
+
+    const handleChangeOne=(e)=>{
+        setNumberOne(e.target.value)
+}
+    const handleChangeTwo=(e)=>{
+        setNumberTwo(e.target.value)
+    }
+
+
+
+    return (
+   <div className="app">
+     <div className="main">
+       <div className="numbers">
+         <div className="number-1">
+             <input placeholder="первое число" type="text" value={numberOne} onChange={handleChangeOne}/>
+         </div>
+         <div className="number-2">
+             <input placeholder="второе число" type="text" value={numberTwo} onChange={handleChangeTwo}/>
+         </div>
+       </div>
+       <div className="buttons">
+         <div className="plus">
+             <button onClick={handlePlus}>+</button>
+         </div>
+         <div className="minus">
+             <button onClick={handleMinus}>-</button>
+         </div>
+         <div className="divide">
+             <button onClick={handleDivide}>*</button>
+         </div>
+         <div className="multiply">
+             <button onClick={handleMultiply}>/</button>
+         </div>
+       </div>
+         <div className="reset">
+             <button onClick={handleReset}>reset</button>
+         </div>
+       <div className="result" >
+           {result}
+       </div>
+     </div>
+   </div>
   );
 }
 

@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+.app{
+    padding: 20px;
+
+}
+.main{
+    background-color:  beige;
+    width: 600px;
+    padding: 10px;
+    font-size: 25px;
+    margin: auto;
+}
+.numbers{
+    display: flex;
+    margin: auto;
+    width: 400px;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 480px;
+    text-align: center;
+    padding: 5px;
+}
+.reset, .result{
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+}
