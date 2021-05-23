@@ -10,19 +10,20 @@ function App() {
 
 
     const handlePlus=()=>{
-         return setResult(+numberOne+ +numberTwo)
+          setResult(+numberOne+ +numberTwo)
 }
     const handleMinus=()=>{
-        return setResult(numberOne-numberTwo)
+         setResult(numberOne-numberTwo)
     }
     const handleDivide=()=>{
-        return setResult (numberOne*numberTwo)
+         setResult (numberOne*numberTwo)
     }
     const handleMultiply=()=>{
-        return setResult(numberOne/numberTwo)
+         setResult(numberOne/numberTwo)
     }
     const handleReset=()=>{
-        return setNumberOne("") & setNumberTwo("")
+        return setNumberOne(""),
+            setNumberTwo("")
     }
 
     const handleChangeOne=(e)=>{
